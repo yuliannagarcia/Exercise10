@@ -1,27 +1,31 @@
-# Hard-coded PIN
+# the pin
 correct_pin = "1234"
 
-# Number of attempts allowed
+# number of attempts allowed
 max_attempts = 3
 
 
-# Recursive function to check PIN
-def check_pin(attempts_left):
+# recursive function to check pin
+# check the entered pin against the correct pin. It takes the number of attempts left as an argument.
+# inside the function
+# def is used to define a function
+def pin_check(attempts_left):
     # Base case: if no attempts left, print failure message
     if attempts_left == 0:
-        print("Sorry, you have exceeded the maximum number of attempts.")
+        print("You have exceeded the maximum PIN attempts.")
         return
 
-    # Prompt user for PIN input
+    # if above does not happen enters back to ask user for PIN input
     supplied_pin = input("Enter your PIN: ")
 
-    # Check if the supplied PIN matches the correct PIN
+    # if the supplied PIN matches the correct PIN enters this if statement where print correct password or the else
     if supplied_pin == correct_pin:
-        print("Success! You have entered the correct PIN.")
+        print("You have entered the correct PIN.")
     else:
-        print("Incorrect PIN. You have", attempts_left - 1, "attempts remaining.")
-        check_pin(attempts_left - 1)  # Call the function recursively with one less attempt
+        print("Incorrect PIN.", attempts_left - 1, "attempts left.")
+        # the number of attempts - 1 to descend from 3 to 0
+        pin_check(attempts_left - 1)  # Call the function again with one less attempt
 
 
-# Call the function to start PIN check with maximum attempts
-check_pin(max_attempts)
+# initiating the PIN check process with the maximum allowed attempt
+pin_check(max_attempts)
