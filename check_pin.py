@@ -1,3 +1,5 @@
+import getpass
+
 # the pin
 correct_pin = "1234"
 
