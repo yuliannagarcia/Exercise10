@@ -31,3 +31,17 @@ def pin_check(attempts_left):
 
 # initiating the PIN check process with the maximum allowed attempt
 pin_check(max_attempts)
+
+# Tanya's PIN Check code
+# Attempts = 3
+# correct_PIN = 0000
+
+# while Attempts != 0:  # executes code block while attempts are not equal to 0
+#  supplied_pin = getpass.getpass("Please enter your PIN: ")
+# if supplied_pin != correct_PIN:
+#    Attempts -= 1   # if attempts are less than or equal to 1
+#   print(f"Incorrect PIN, You have {Attempts} Attempts left")
+# else:
+#    print("Kaching")
+#   break
+# if pin is correct, terminal prints kaching then break will end while loop
