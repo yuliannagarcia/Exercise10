@@ -24,7 +24,7 @@ def pin_check(attempts_left):
     if supplied_pin == correct_pin:
         print("You have entered the correct PIN.")
     else:
-        print("Incorrect PIN.", attempts_left - 1, "attempts left.")
+        print(f"Incorrect PIN. {attempts_left - 1} attempts left.")
         # the number of attempts - 1 to descend from 3 to 0
         pin_check(attempts_left - 1)  # Call the function again with one less attempt
 
