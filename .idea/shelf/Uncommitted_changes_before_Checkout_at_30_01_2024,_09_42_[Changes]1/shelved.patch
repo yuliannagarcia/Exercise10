@@ -1,0 +1,19 @@
+Index: check_pin.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import getpass\n\n# the pin\ncorrect_pin = \"1234\"\n\n# number of attempts allowed\nmax_attempts = 3\n\n\n# recursive function to check pin\n# check the entered pin against the correct pin. It takes the number of attempts left as an argument.\n# inside the function\n# def is used to define a function\ndef pin_check(attempts_left):\n    # Base case: if no attempts left, print failure message\n    if attempts_left == 0:\n        print(\"You have exceeded the maximum PIN attempts.\")\n        return\n\n    # if above does not happen enters back to ask user for PIN input\n    supplied_pin = input(\"Enter your PIN: \")\n\n    # if the supplied PIN matches the correct PIN enters this if statement where print correct password or the else\n    if supplied_pin == correct_pin:\n        print(\"You have entered the correct PIN.\")\n    else:\n        print(\"Incorrect PIN.\", attempts_left - 1, \"attempts left.\")\n        # the number of attempts - 1 to descend from 3 to 0\n        pin_check(attempts_left - 1)  # Call the function again with one less attempt\n\n\n# initiating the PIN check process with the maximum allowed attempt\npin_check(max_attempts)\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/check_pin.py b/check_pin.py
+--- a/check_pin.py	
++++ b/check_pin.py	
+@@ -18,7 +18,7 @@
+         return
+ 
+     # if above does not happen enters back to ask user for PIN input
+-    supplied_pin = input("Enter your PIN: ")
++    supplied_pin = getpass.getpass("Enter your PIN: ")
+ 
+     # if the supplied PIN matches the correct PIN enters this if statement where print correct password or the else
+     if supplied_pin == correct_pin:
