@@ -21,4 +21,4 @@ for filename in filenames:
         # size.
         base_filename = os.path.basename(filename)  # removes the leading directory name(s) from each filename before
         # printing, so only the filename is displayed
-        print(base_filename, "-", file_size, "bytes")  # Print filename and its size
+        print(f"{base_filename} - {file_size} bytes")  # Print filename and its size
