@@ -1,0 +1,19 @@
+Index: ex10_starter.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import sys, glob, os\n\n# Get the directory name\nif sys.platform == 'win32':  # Check if the platform is Windows\n    hdir = os.environ['HOMEPATH']  # Get the home directory path for Windows\nelse:  # If the platform is not Windows (e.g., Linux)\n    hdir = os.environ['HOME']  # Get the home directory path for Linux\n\n# Construct a portable wildcard pattern\npattern = os.path.join(hdir, '*')  # Create a wildcard pattern for all files in the directory\n\n# Use the glob.glob() function to obtain the list of filenames\nfilenames = glob.glob(pattern)  # Get a list of filenames in the directory matching the pattern\n\n# Use os.path.getsize to find each file's size and display non-zero length files\n# iterates through the list of filenames obtained from glob.glob()\nfor filename in filenames:\n    # for each filename, os.path.getsize() gets the size of the file\n    file_size = os.path.getsize(filename)\n    if file_size > 0:  # checks if the file size is bigger than 0 bytes, and if so, it prints the filename and its\n        # size.\n        base_filename = os.path.basename(filename)  # removes the leading directory name(s) from each filename before\n        # printing, so only the filename is displayed\n        print(base_filename, \"-\", file_size, \"bytes\")  # Print filename and its size\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ex10_starter.py b/ex10_starter.py
+--- a/ex10_starter.py	
++++ b/ex10_starter.py	
+@@ -15,7 +15,7 @@
+ # Use os.path.getsize to find each file's size and display non-zero length files
+ # iterates through the list of filenames obtained from glob.glob()
+ for filename in filenames:
+-    # for each filename, os.path.getsize() gets the size of the file
++    # for each filename, os.path.getsize () gets the size of the file
+     file_size = os.path.getsize(filename)
+     if file_size > 0:  # checks if the file size is bigger than 0 bytes, and if so, it prints the filename and its
+         # size.
