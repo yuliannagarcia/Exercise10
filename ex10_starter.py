@@ -26,6 +26,8 @@ for filename in filenames:
     file_size = os.path.getsize(filename)
     if file_size > 0:  # checks if the file size is bigger than 0 bytes, and if so, it prints the filename and its
         # size.
+        
         base_filename = os.path.basename(filename)  # a function that takes a file path as input and returns just the
         # filename so only the filename is displayed
+    
         print(f"{base_filename} - {file_size} bytes")  # Print filename and its size
